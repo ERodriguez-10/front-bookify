@@ -8,10 +8,7 @@ type IItem = {
 
 export default function ShopItem({ title, thumbnail }: IItem) {
   return (
-    <div
-      className="flex flex-col justify-between rounded-sm p-4"
-      style={{ backgroundColor: "#f2f2f2" }}
-    >
+    <div className="flex flex-col justify-between rounded-sm bg-gradient-to-tr from-zinc-50 to-gray-300 p-4 hover:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
       <div className="my-auto h-max">
         <Image
           src={thumbnail}

@@ -77,24 +77,26 @@ export default async function HomePage() {
   return (
     <>
       <div className="container mx-auto">
-        <div className="flex min-h-[calc(100vh-theme('spacing.32'))] flex-col">
+        <div className="flex min-h-[calc(100vh-theme('spacing.20'))] flex-col md:min-h-[calc(100vh-theme('spacing.32'))]">
           <div className="mb-12 flex-grow rounded-xl bg-gradient-to-r from-gray-200 to-slate-300 p-16">
             {/* // TODO: Hero Image */}
           </div>
         </div>
 
         <div className="py-12">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold">Shop by Categories</h2>
+          <div className="md:flex md:items-center md:justify-between">
+            <h2 className="text-center text-2xl font-bold lg:text-left">
+              Shop by Categories
+            </h2>
             <Link
               href={"/shop"}
-              className=" border-2 border-white px-5 py-2 text-lg transition-all hover:border-black"
+              className="hidden border-2 border-gray-50 px-5 py-2 text-lg transition-all hover:border-black md:block lg:block"
             >
               Show All
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 pt-12">
+          <div className="grid grid-cols-1 gap-8 pt-12 md:grid-cols-2 lg:grid-cols-3">
             {categoriesCarHome.map((category: ICategoryCar) => {
               return (
                 <ShopItem
@@ -104,6 +106,13 @@ export default async function HomePage() {
                 />
               );
             })}
+
+            <Link
+              href={"/shop"}
+              className="border-2 border-white px-5 py-2 text-center text-lg transition-all hover:border-black md:hidden"
+            >
+              Show All
+            </Link>
           </div>
         </div>
 
@@ -116,11 +125,11 @@ export default async function HomePage() {
         <div className="py-12">
           <h2 className="text-center text-2xl">New Collections</h2>
 
-          <p className="py-8 font-bold">
+          <p className="py-8 text-center font-bold md:text-left">
             Showing 1 - 3 of {bookData.totalDocs} Cars
           </p>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {bookData.payload.map((book: IBook) => {
               return (
                 <CollectionItem
@@ -150,7 +159,7 @@ export default async function HomePage() {
         </div>
 
         <div className="py-12">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div>
               <h3 className="pb-12 text-3xl">Deals of the Month</h3>
               <p className="pb-8 text-lg">
@@ -161,7 +170,7 @@ export default async function HomePage() {
               </p>
               <Link
                 href={"/shop"}
-                className="flex max-w-fit items-center rounded-sm border-2 border-white px-5 py-3 font-semibold no-underline transition-all hover:border-black"
+                className="flex max-w-fit items-center rounded-sm border-2 border-gray-50 py-3 font-semibold no-underline transition-all hover:border-black lg:px-5"
               >
                 <p>View Products</p> <ArrowRightIcon className="ms-2 w-4" />
               </Link>
@@ -172,7 +181,7 @@ export default async function HomePage() {
         </div>
 
         <div className="py-12">
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <BenefitItem
               title="Free Shipping"
               description="Free shipping for order above $45,000"
