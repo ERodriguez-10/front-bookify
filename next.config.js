@@ -12,6 +12,11 @@ const config = {
             hostname: "picsum.photos",
             port: '',
             pathname: "/id/**"
+        }, {
+            protocol: "https",
+            hostname: "img.freepik.com",
+            port: '',
+            pathname: "/psd-gratis/*"
         }]
     }
 };

@@ -1,11 +1,15 @@
-import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+interface IBenefit {
+  title: string;
+  description: string;
+  icon: any;
+}
 
-export default function BenefitItem() {
+export default function BenefitItem({ title, description, icon }: IBenefit) {
   return (
     <div>
-      <ShoppingBagIcon className="w-8 py-4" />
-      <p>Free Shipping</p>
-      <p>Description products shipping</p>
+      {icon}
+      <p className="py-1 text-xl font-bold">{title}</p>
+      <p>{description}</p>
     </div>
   );
 }

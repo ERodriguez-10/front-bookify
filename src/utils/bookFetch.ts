@@ -25,10 +25,14 @@ interface IFetchResponse {
   nextLink: string;
 }
 
-export default async function bookFetch(
-  limit: string,
-): Promise<IFetchResponse> {
+export async function bookFetch(limit: string): Promise<IFetchResponse> {
   return await fetch(`http://localhost:8080/api/books?limit=${limit}`)
     .then((res) => res.json() as Promise<{ productData: IFetchResponse }>)
     .then((data) => data.productData);
+}
+
+export async function categoryFetch() {
+  return await fetch("http://localhost:8080/api/books/categories")
+    .then((res) => res.json() as Promise<{ categoriesData: string[] }>)
+    .then((data) => data.categoriesData);
 }

@@ -15,7 +15,7 @@ export default function CollectionItem({
 }: IItem) {
   return (
     <div>
-      <div className="rounded-sm bg-gray-200 p-4">
+      <div className="rounded-xl p-4" style={{ backgroundColor: "#f2f2f2" }}>
         <Image
           src={thumbnail}
           width={250}
@@ -24,9 +24,9 @@ export default function CollectionItem({
           className="mx-auto"
         />
       </div>
-      <p>{title}</p>
-      <p>{description}</p>
-      <p>{price}</p>
+      <p className="text-ellipsis py-3 text-lg font-bold">{title}</p>
+      <p className="truncate">{description}</p>
+      <p>${price}</p>
     </div>
   );
 }
