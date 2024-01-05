@@ -1,8 +1,10 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
+  "author": "ERODRIGUEZ-10",
+  "license": "MIT",
+  "description": "Frontend for an E-Commerce website. Built with Next.js, TailwindCSS, and TypeScript.",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
